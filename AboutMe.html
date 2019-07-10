@@ -1,0 +1,126 @@
+<!DOCTYPE>
+
+<html>
+    <head>
+        <title>About Me</title>
+    </head>
+    <body>
+        <header>
+            <h1>About Me</h1>
+            <p>Hello my name is Debolina Das; I am a student of the Microsoft Professional Certificate Program in Building Prototypes Using Javascript and Node.js.</p>
+        </header>
+        <article>
+            <section>
+                    <h2>My Background</h2>
+                    <p>
+                        My background is in Chemical Engineering. I have worked in this discipline for 10 years. My area of specialization are - 
+                    </p>
+                    <ul>
+                        <li>Themodynamics</li>
+                        <li>Data Analytics</li>
+                        <li>Crystallization and Drying</li>
+                        <li>Scale-Up Process from Laboratory Scale to Pilot Scale</li>
+                        <li>Transport Phenomena</li>
+                        <li>Process Optimization</li>
+                    </ul>
+            </section>
+            <section>
+                    <h2>My Hobbies</h2>
+                    <p>I like to write codes and here are some examples of codes that I have done in Python:</p>
+                    <p>
+                        <strong># Element_Quiz</strong>
+                    </p>
+                    <p>
+                            <em>
+                                    # Create get_names() Function to collect input of 5 unique element names
+                                    def get_names():
+                                        element_list = []
+                                        element = input("Enter the name of an element: ")
+                                        while element.lower() in element_list:
+                                            print(element.title(), "was already entered           <-- no duplicates allowed")
+                                            element = input("Enter the name of an element: ")
+                                        while element == "":
+                                            element = input("Enter the name of an element: ")
+                                        for count in range(4):
+                                            element_list.append(element.lower())
+                                            count += 1
+                                            element = input("Enter the name of an element: ")
+                                            while element.lower() in element_list:
+                                                print(element.title(), "was already entered           <-- no duplicates allowed")
+                                                element = input("Enter the name of an element: ")
+                                            while element == "":
+                                                element = input("Enter the name of an element: ")
+                                        element_list.append(element.lower())
+                                        return element_list
+                                    
+                                    # import the file into the Jupyter Notebook environment
+                                    !curl https://raw.githubusercontent.com/MicrosoftLearning/intropython/master/elements1_20.txt -o elements1_20.txt
+                                    first_20_elements_file = open('elements1_20.txt', 'r')
+                                    # read one line at a time to get element names
+                                    # remove any whitespace (spaces, newlines) and save each element name, as lowercase, into a list
+                                    first_20_list = []
+                                    # print(first_20_elements_file.read())
+                                    for count in range(20):
+                                        element_name = first_20_elements_file.readline().strip()
+                                        first_20_list.append(element_name.lower())
+                                    print("list any 5 of the first 20 elements in the Period table")
+                                    # Call the get_names() function
+                                    element_list_input = get_names()
+                                    print(element_list_input)
+                                    # check if responses are in the list of elements
+                                    correct_responses = []
+                                    incorrect_responses = []
+                                    for item in element_list_input:
+                                        if item in first_20_list:
+                                            correct_responses += [item]
+                                        else:
+                                            incorrect_responses += [item]
+                                    percentage = len(correct_responses)*100/5
+                                    print(percentage, "% correct")
+                                    print("Found: ", correct_responses)
+                                    print("Not Found", incorrect_responses) 
+                            </em>
+                    </p>
+                    <p>
+                        <strong># Program: Poem Mixer</strong>
+                    </p>
+    
+                            <em>
+                                poem = input("Enter a poem, verse or saying: ")
+                                words_list = poem.split()
+                                modified_list = []
+                                length = len(words_list)
+                                for index in range(length):
+                                    if len(words_list[index]) <= 3:
+                                        words_list[index] = words_list[index].lower()
+                                    elif len(words_list[index]) >= 7:
+                                        words_list[index] = words_list[index].upper()
+                                    else:
+                                        pass
+                                    modified_list += [words_list[index]]
+                                
+                                
+                                def word_mixer(modified_list):
+                                    modified_list.sort()
+                                    new_list = []
+                                    while len(modified_list) > 5:
+                                        new_list.append(modified_list.pop(-5))
+                                        new_list.append(modified_list.pop(0))
+                                        new_list.append(modified_list.pop(-1))
+                                        new_list.append("\n")
+                                    return " ".join(new_list)                         
+                            </em>
+                        <p>
+            </section>
+            <section>
+                <h3>Software Development</h3>
+                <p>I find Software Development really interesting because:</p>
+                <ol>
+                    <li>Code builds everything.</li>
+                    <li>Nearly all tech that we engage with relies on software. </li>
+                    <li>Software Developers are the people bringing the modern world to life.</li>
+                </ol>
+            </section>
+        </article>
+    </body>
+</html>
